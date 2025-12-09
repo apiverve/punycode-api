@@ -1,0 +1,76 @@
+openapi: 3.0.4
+info:
+  title: Punycode Converter
+  description: Convert between Unicode and Punycode for internationalized domain names (IDN).
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/punycode:
+    get:
+      summary: Convert Punycode
+      description: Convert between Unicode and Punycode for internationalized domain names (IDN).
+      operationId: punycode
+      parameters:
+      - name: text
+        in: query
+        schema:
+          type: string
+        required: true
+        description: Text or domain to encode/decode (max 1000 characters)
+        example: münchen.de
+      - name: mode
+        default: encode
+        in: query
+        schema:
+          type: string
+        required: false
+        description: 'Mode: encode (Unicode to Punycode) or decode (Punycode to Unicode)'
+        example: encode
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  input: münchen.de
+                  output: xn--mnchen-3ya.de
+                  mode: encode
+                  isIDN: true
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
