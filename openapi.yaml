@@ -1,40 +1,41 @@
 openapi: 3.0.4
 info:
   title: Punycode Converter
-  description: Convert between Unicode and Punycode for internationalized domain names (IDN).
+  description: >-
+    Convert between Unicode and Punycode for internationalized domain names
+    (IDN).
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/punycode:
     get:
-      summary: Convert Punycode
-      description: Convert between Unicode and Punycode for internationalized domain names (IDN).
+      summary: Encode to Punycode
+      description: Encode Unicode text to Punycode (ASCII-compatible encoding)
       operationId: punycode
       parameters:
-      - name: text
-        in: query
-        schema:
-          type: string
-        required: true
-        description: Text or domain to encode/decode (max 1000 characters)
-        example: münchen.de
-      - name: mode
-        default: encode
-        in: query
-        schema:
-          type: string
-        required: false
-        description: 'Mode: encode (Unicode to Punycode) or decode (Punycode to Unicode)'
-        example: encode
+        - name: text
+          in: query
+          schema:
+            type: string
+          required: true
+          description: Unicode text or domain to encode (max 1000 characters)
+          example: münchen.de
+        - name: mode
+          in: query
+          schema:
+            type: string
+          required: false
+          description: Conversion mode
+          example: encode
       responses:
         '200':
           description: Successful Response
@@ -50,11 +51,11 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   input: münchen.de
                   output: xn--mnchen-3ya.de
@@ -65,7 +66,7 @@ paths:
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -73,4 +74,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
