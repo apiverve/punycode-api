@@ -11,15 +11,13 @@ namespace APIVerve.API.PunycodeConverter
     public class PunycodeConverterQueryOptions
     {
         /// <summary>
-        /// Text or domain to encode/decode (max 1000 characters)
-        /// Example: münchen.de
+        /// Unicode text or domain to encode (max 1000 characters)
         /// </summary>
         [JsonProperty("text")]
         public string Text { get; set; }
 
         /// <summary>
-        /// Mode: encode (Unicode to Punycode) or decode (Punycode to Unicode)
-        /// Example: encode
+        /// Conversion mode
         /// </summary>
         [JsonProperty("mode")]
         public string Mode { get; set; }
