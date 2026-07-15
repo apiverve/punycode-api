@@ -13,7 +13,13 @@ const API_URL = 'https://api.apiverve.com/v1/punycode';
  */
 async function callPunycodeConverterAPI() {
   try {
-    const response = await fetch(API_URL, {
+    // Query parameters
+    const params &#x3D; new URLSearchParams({
+            text: &#x27;münchen.de&#x27;,
+            mode: &#x27;encode&#x27;
+        });
+
+    const response = await fetch(`${API_URL}?${params}`, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
