@@ -128,7 +128,11 @@ async function makeRequest() {
     "input": "münchen.de",
     "output": "xn--mnchen-3ya.de",
     "mode": "encode",
-    "isIDN": true
+    "isIDN": true,
+    "scripts": [
+      "Latin"
+    ],
+    "mixedScript": false
   }
 }
 ```
