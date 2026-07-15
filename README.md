@@ -30,7 +30,12 @@ The Punycode Converter API provides a simple, reliable way to integrate punycode
 ```javascript
 async function callPunycodeConverterAPI() {
     try {
-        const response = await fetch('https://api.apiverve.com/v1/punycode', {
+        const params = new URLSearchParams({
+            text: 'münchen.de',
+            mode: 'encode'
+        });
+
+        const response = await fetch(`https://api.apiverve.com/v1/punycode?${params}`, {
             method: 'GET',
             headers: {
                 'x-api-key': 'YOUR_API_KEY_HERE'
@@ -50,7 +55,7 @@ callPunycodeConverterAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/punycode?param=value" \
+curl -X GET "https://api.apiverve.com/v1/punycode?text=m%C3%BCnchen.de&mode=encode" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -150,7 +155,7 @@ go get github.com/apiverve/punycode-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
@@ -169,7 +174,7 @@ go get github.com/apiverve/punycode-api/go
 The Punycode Converter API is commonly used for:
 
 - **Web Applications** - Add punycode converter features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with punycode converter capabilities
 - **Data Pipelines** - Process and analyze data at scale
