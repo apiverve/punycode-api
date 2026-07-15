@@ -4,19 +4,33 @@ declare module '@apiverve/punycode' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface punycodeResponse {
     status: string;
     error: string | null;
     data: PunycodeConverterData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface PunycodeConverterData {
-      input:  string;
-      output: string;
-      mode:   string;
-      isIDN:  boolean;
+      input:       null | string;
+      output:      null | string;
+      mode:        null | string;
+      isIDN:       boolean | null;
+      scripts:     (null | string)[];
+      mixedScript: boolean | null;
   }
 
   export default class punycodeWrapper {
