@@ -25,6 +25,9 @@ namespace APIVerve.API.PunycodeConverter
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -39,6 +42,24 @@ namespace APIVerve.API.PunycodeConverter
         public string Mode { get; set; }
 
         [JsonProperty("isIDN")]
-        public bool IsIdn { get; set; }
+        public bool? IsIdn { get; set; }
+
+        [JsonProperty("scripts")]
+        public string[] Scripts { get; set; }
+
+        [JsonProperty("mixedScript")]
+        public bool? MixedScript { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
