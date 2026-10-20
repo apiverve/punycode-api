@@ -44,6 +44,9 @@ namespace APIVerve.API.PunycodeConverter
         [JsonProperty("isIDN")]
         public bool? IsIdn { get; set; }
 
+        [JsonProperty("isDomain")]
+        public bool? IsDomain { get; set; }
+
         [JsonProperty("scripts")]
         public string[] Scripts { get; set; }
 
