@@ -29,6 +29,7 @@ declare module '@apiverve/punycode' {
       output:      null | string;
       mode:        null | string;
       isIDN:       boolean | null;
+      isDomain:    boolean | null;
       scripts:     (null | string)[];
       mixedScript: boolean | null;
   }
