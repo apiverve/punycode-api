@@ -18,7 +18,7 @@ servers:
 paths:
   /v1/punycode:
     get:
-      summary: Encode to Punycode
+      summary: Punycode Converter
       description: Encode Unicode text to Punycode (ASCII-compatible encoding)
       operationId: punycode
       parameters:
@@ -61,6 +61,7 @@ paths:
                   output: xn--mnchen-3ya.de
                   mode: encode
                   isIDN: true
+                  isDomain: true
                   scripts:
                     - Latin
                   mixedScript: false
