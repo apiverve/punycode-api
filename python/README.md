@@ -3,11 +3,10 @@ Punycode Converter API
 
 Convert between Unicode and Punycode for internationalized domain names (IDN).
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Punycode Converter API](https://apiverve.com/marketplace/punycode?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-punycodeconverter.svg)](https://pypi.org/project/apiverve-punycodeconverter/)
+
+This is a Python wrapper for the [Punycode Converter API](https://apiverve.com/marketplace/punycode?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-punycodeconverter
 
 ## Configuration
 
-Before using the punycode API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Punycode Converter API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -63,7 +62,7 @@ except Exception as e:
 
 ## Usage
 
-The Punycode Converter API documentation is found here: [https://docs.apiverve.com/ref/punycode](https://docs.apiverve.com/ref/punycode?utm_source=pypi&utm_medium=readme).
+The Punycode Converter API documentation is found here: [https://docs.apiverve.com/ref/punycode](https://docs.apiverve.com/ref/punycode?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -111,7 +110,12 @@ print(result)
     "input": "münchen.de",
     "output": "xn--mnchen-3ya.de",
     "mode": "encode",
-    "isIDN": true
+    "isIDN": true,
+    "isDomain": true,
+    "scripts": [
+      "Latin"
+    ],
+    "mixedScript": false
   }
 }
 ```
@@ -254,7 +258,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -265,12 +269,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
