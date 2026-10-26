@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/punycode",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Convert between Unicode and Punycode for internationalized domain names (IDN).",
   "main": "index.js",
   "types": "index.d.ts",
