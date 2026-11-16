@@ -11,7 +11,7 @@ namespace APIVerve.API.PunycodeConverter
     public class PunycodeConverterQueryOptions
     {
         /// <summary>
-        /// Unicode text or domain to encode (max 1000 characters)
+        /// Unicode label, domain, email address or URL to encode; only the domain of an email or the host of a URL is converted (max 1000 characters)
         /// </summary>
         [JsonProperty("text")]
         public string Text { get; set; }
