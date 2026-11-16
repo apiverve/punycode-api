@@ -27,7 +27,10 @@ paths:
           schema:
             type: string
           required: true
-          description: Unicode text or domain to encode (max 1000 characters)
+          description: >-
+            Unicode label, domain, email address or URL to encode; only the
+            domain of an email or the host of a URL is converted (max 1000
+            characters)
           example: münchen.de
         - name: mode
           in: query
