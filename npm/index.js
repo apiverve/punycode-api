@@ -30,7 +30,7 @@ class punycodeWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/punycode';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"text":{"type":"string","required":true,"maxLength":1000},"mode":{"type":"string","required":false,"default":"encode"}};
+        this.validationRules = {"text":{"type":"string","required":true,"minLength":1,"maxLength":1000},"mode":{"type":"string","required":false,"default":"encode"}};
     }
 
     /**
